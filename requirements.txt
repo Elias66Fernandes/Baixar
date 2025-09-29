@@ -3,4 +3,3 @@ yt-dlp
 requests
 zipstream-new
 gunicorn
-shutil
