@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, Response, redirect, url_for
 import yt_dlp
 import re
 import zipstream
-import requests
 from concurrent.futures import ThreadPoolExecutor
 import os
 import shutil # NOVO: Adicionado para ajudar na limpeza de diretórios
