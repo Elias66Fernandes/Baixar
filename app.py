@@ -8,6 +8,8 @@ import os
 
 app = Flask(__name__)
 
+COOKIES_FILE = "cookies.txt"
+
 def sanitize_filename(name):
     return re.sub(r'[^a-zA-Z0-9_\- ]', '', name)
 
@@ -16,6 +18,7 @@ def stream_audio_m4a(url):
         "format": "bestaudio[ext=m4a]/bestaudio",
         "quiet": True,
         "noplaylist": True,
+        "cookiefile": COOKIES_FILE,
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=False)
